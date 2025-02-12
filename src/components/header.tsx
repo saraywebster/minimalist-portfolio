@@ -1,28 +1,20 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <div
-      className="
-    fixed top-0 left-0 w-full bg-white
-    opacity-30 backdrop-blur-lg p-4 shadow-md flex justify-between intems-center z-50"
-    >
-      <h1 className="text-xl font-semi-bold text-white-900 tracking-wide">
-        Sara Ferreira
-      </h1>
-      <nav className="flex justify-between items-center">
-        <ul className="flex space-x-4 text-white-900 font-medium text-sm">
-          <li className="hover:underline">
-            <Link to={"/about"}>Sobre mim</Link>
-          </li>
-          <li className="hover:underline">
-            <Link to={""}>Projetos</Link>
-          </li>{" "}
-          <li className="hover:underline">
-            <Link to={"/about"}>Contato</Link>
-          </li>
-        </ul>
+    <header className="w-full max-w-4xl p-5 bg-white/10 rounded-lg flex justify-between items-center shadow-md">
+      <h1 className="text-xl font-bold">Sara Ferreira</h1>
+      <nav className="flex gap-5">
+        <Link to="/" className="text-gray-300 hover:text-purple-400">
+          Sobre
+        </Link>
+        <Link to="/" className="text-gray-300 hover:text-purple-400">
+          Projetos
+        </Link>
+        <Link to="/" className="text-gray-300 hover:text-purple-400">
+          Contato
+        </Link>
       </nav>
-    </div>
+    </header>
   );
 };

@@ -4,7 +4,7 @@ import { HomeRoutes } from "./routes/home-routes";
 
 function App() {
   return (
-    <div className="App bg-gradient-to-br from-purple-950 via-black to-black h-screen items-center flex justify-center ">
+    <div className=" bg-gradient-to-br from-[#0f0f17] to-[#1a1a2e] h-screen flex flex-col items-center text-white ">
       <BrowserRouter>
         <HomeRoutes />
       </BrowserRouter>
