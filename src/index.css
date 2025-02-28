@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Charm_regular";
+  src: url("src/assets/fonts/Charm/Charm-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Charm_bold";
+  src: url("src/assets/fonts/Charm/Charm-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto_Flex";
+  src: url("src/assets/fonts/Roboto_Flex/static/RobotoFlex-Regular.ttf")
+    format("truetype");
+}
+
+:root {
+  --font-title: "Charm_regular", cursive;
+  --font-tile-bold: "Charm_bold", cursive;
+  --font-body: "Roboto_Flex", sans-serif;
+}
