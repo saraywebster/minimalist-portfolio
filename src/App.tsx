@@ -1,10 +1,9 @@
-import { Sidebar } from "./components/menu /sidebar";
+import { Home } from "./components/pages/home";
 import "./index.css";
-
 export const App = () => {
   return (
-    <>
-      <Sidebar />
-    </>
+    <main className="w-full">
+      <Home />
+    </main>
   );
 };
