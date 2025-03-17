@@ -8,11 +8,11 @@ export const Sidebar = () => {
 
   return (
     <>
-      <span className="hidden lg:block bg-blue-100">
+      <span className="hidden lg:block bg-indigo-50">
         <DesktopNav />
       </span>
 
-      <span className="block lg:hidden p-2 relative bg-blue-100 shadow-md">
+      <span className="block lg:hidden p-2 relative bg-indigo-50 shadow-md">
         <section onClick={() => setIsOpen(!isOpen)} className="cursor-pointer ">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
