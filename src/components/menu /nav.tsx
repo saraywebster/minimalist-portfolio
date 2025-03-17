@@ -1,30 +1,33 @@
 export const Nav = () => {
   return (
-    <span className="space-y-5 lg:space-y-0 space-x-0 lg:space-x-5 flex flex-col lg:flex-row font-bold text-xl text-center">
+    <span
+      className="space-y-5 lg:space-y-0 space-x-0 lg:space-x-5 flex flex-col lg:flex-row text-2xl text-center text-blue-950"
+      style={{ fontFamily: "var(--font-body)" }}
+    >
       <a
         href="#home"
-        className="hover:text-orange-500 hover:scale-105 hover:border-b-2 hover:border-orange-500 transition-all duration-300"
+        className="hover:text-blue-500 hover:scale-105transition-all duration-300"
       >
         Início
       </a>
 
       <a
         href="#sobre"
-        className="hover:text-orange-500  hover:scale-105 hover:border-b-2 hover:border-orange-500 transition-all duration-300"
+        className="hover:text-blue-500  hover:scale-105 transition-all duration-300"
       >
         Sobre
       </a>
 
       <a
         href="#projetos"
-        className="hover:text-orange-500 hover:scale-105 hover:border-b-2 hover:border-orange-500 transition-all duration-300"
+        className="hover:text-blue-500 hover:scale-105  transition-all duration-300"
       >
         Projetos
       </a>
 
       <a
         href="#contato"
-        className="hover:text-orange-500  hover:scale-105 hover:border-b-2 hover:border-orange-500 transition-all duration-300"
+        className="hover:text-blue-500  hover:scale-105 transition-all duration-300"
       >
         Contato
       </a>
@@ -42,11 +45,27 @@ export const MobileNav = () => {
   );
 };
 
+export const TabletNav = () => {
+  return (
+    <nav
+      className="w-full max-h-1/12 p-5 bg-blue-100 relative flex flex-col justify-center items-center text-blue-950 shadow-md
+    "
+    >
+      <span className="flex flex-col">
+        <Nav />
+      </span>
+    </nav>
+  );
+};
+
 export const DesktopNav = () => {
   return (
-    <nav className="w-full flex flex-row align-center justify-around shadow-md p-2">
-      <h1 className="text-2xl font-bold md:block hidden text-blue-950 p-2">
-        Sara Ferreira
+    <nav className="w-full flex flex-row p-3 items-center justify-evenly shadow-md">
+      <h1
+        className="text-2xl md:block hidden text-blue-950"
+        style={{ fontFamily: "var(--font-title)" }}
+      >
+        Saraywebster
       </h1>
       <span className=" p-2">
         <Nav />
