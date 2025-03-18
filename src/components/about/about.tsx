@@ -1,4 +1,8 @@
 import { TextAbout } from "./text_about";
 export const About = () => {
-  return <TextAbout />;
+  return (
+    <section id="about">
+      <TextAbout />
+    </section>
+  );
 };

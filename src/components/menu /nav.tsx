@@ -1,4 +1,9 @@
+import { useNav } from "./navcontext";
 export const Nav = () => {
+  const { setIsOpen } = useNav();
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <span
       className="space-y-5 lg:space-y-0 space-x-0 lg:space-x-5 flex flex-col lg:flex-row text-2xl text-center text-indigo-950"
@@ -7,27 +12,31 @@ export const Nav = () => {
       <a
         href="#home"
         className="hover:text-indigo-500 hover:scale-105transition-all duration-300"
+        onClick={closeMenu}
       >
         Início
       </a>
 
       <a
-        href="#sobre"
+        href="#about"
         className="hover:text-indigo-500  hover:scale-105 transition-all duration-300"
+        onClick={closeMenu}
       >
         Sobre
       </a>
 
       <a
-        href="#projetos"
+        href="#projects"
         className="hover:text-indigo-500 hover:scale-105  transition-all duration-300"
+        onClick={closeMenu}
       >
         Projetos
       </a>
 
       <a
-        href="#contato"
+        href="#contact"
         className="hover:text-indigo-500  hover:scale-105 transition-all duration-300"
+        onClick={closeMenu}
       >
         Contato
       </a>

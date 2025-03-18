@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
 import { DesktopNav, MobileNav, TabletNav } from "./nav";
-
+import { useNav } from "./navcontext";
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useNav();
 
   return (
     <>
