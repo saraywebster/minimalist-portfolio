@@ -11,7 +11,7 @@ export const Form = () => {
     message: "",
   });
 
-  const [erros, setErrors] = useState({
+  const [errors, setErrors] = useState({
     name: "",
     email: "",
     message: "",
@@ -32,7 +32,7 @@ export const Form = () => {
   };
 
   const validateForm = () => {
-    let newErros = {
+    let newErrors = {
       name: "",
       email: "",
       message: "",
@@ -41,27 +41,27 @@ export const Form = () => {
     let isValid = true;
 
     if (formData.name.trim() === "") {
-      newErros.name = "O nome é obrigatório";
+      newErrors.name = "* O nome é obrigatório";
       isValid = false;
     }
 
     if (formData.email.trim() === "") {
-      newErros.email = "O email é obrigatório";
+      newErrors.email = "* O email é obrigatório";
       isValid = false;
     }
 
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErros.email = "O email é inválido";
+      newErrors.email = "* O email é inválido";
       isValid = false;
     }
 
     if (formData.message.trim() === "") {
-      newErros.message = "A mensagem é obrigatória";
+      newErrors.message = "* A mensagem é obrigatória";
       isValid = false;
     }
 
-    setErrors(newErros);
-    return { isValid, newErros };
+    setErrors(newErrors);
+    return { isValid, newErrors };
   };
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -115,14 +115,15 @@ export const Form = () => {
           placeholder="Digite seu nome"
           value={formData.name}
           onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+          className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4 ${
+            errors.name
+              ? "border-red-500 focus:outline-red-500 bg-red-50"
+              : "border-gray-300 focus:outline-indigo-500"
+          }`}
         />
-
-        {erros.name && (
-          <span className="text-red-500 text-sm bg-red-50 p-1">
-            {erros.name}
-          </span>
-        )}
+        <span className="text-red-500 text-sm mb-2 w-full text-left">
+          {errors.name}
+        </span>
 
         <input
           type="email"
@@ -130,11 +131,16 @@ export const Form = () => {
           placeholder="Digite seu email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+          className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4 ${
+            errors.name
+              ? "border-red-500 focus:outline-red-500 bg-red-50"
+              : "border-gray-300 focus:outline-indigo-500"
+          }`}
         />
-        {erros.email && (
-          <span className="text-red-500 text-sm bg-red-50">{erros.email}</span>
-        )}
+
+        <span className="text-red-500 text-sm mb-2 w-full text-left">
+          {errors.email}
+        </span>
 
         <textarea
           name="message"
@@ -143,13 +149,16 @@ export const Form = () => {
           value={formData.message}
           onChange={handleChange}
           disabled={isSubmitted}
-          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+          className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4 ${
+            errors.name
+              ? "border-red-500 focus:outline-red-500 bg-red-50"
+              : "border-gray-300 focus:outline-indigo-500"
+          }`}
         />
-        {erros.message && (
-          <span className="text-red-500 text-sm bg-red-50">
-            {erros.message}
-          </span>
-        )}
+
+        <span className="text-red-500 text-sm mb-2 w-full text-left">
+          {errors.message}
+        </span>
 
         <button
           type="submit"
