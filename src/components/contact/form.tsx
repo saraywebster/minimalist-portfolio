@@ -143,42 +143,7 @@ export const Form = () => {
             }`}
           />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite seu email"
-            value={formData.email}
-            onChange={handleChange}
-            className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4 ${
-              errors.name
-                ? "border-red-500 focus:outline-red-500 bg-red-50"
-                : "border-gray-300 focus:outline-indigo-500"
-            }`}
-          />
-
           <span className="text-red-500 text-sm mb-2 w-full text-left">
-            {errors.email}
-          </span>
-
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Digite sua mensagem..."
-            value={formData.message}
-            onChange={handleChange}
-            disabled={isSubmitted}
-            className={`w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4 ${
-              errors.name
-                ? "border-red-500 focus:outline-red-500 bg-red-50"
-                : "border-gray-300 focus:outline-indigo-500"
-            }`}
-          />
-
-          <span className="text-red-500 text-sm mb-4 w-full text-left">
-            {errors.message}
-          </span>
-
-          <span className="text-red-500 text-sm w-full text-left">
             {errors.email}
           </span>
         </div>
