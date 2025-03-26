@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 
 export const Form = () => {
@@ -63,7 +63,7 @@ export const Form = () => {
     setErrors(newErrors);
     return { isValid, newErrors };
   };
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     const { isValid } = validateForm();
@@ -73,29 +73,26 @@ export const Form = () => {
     }
 
     setIsSubmitted(true);
-    setShowMessage(true);
-    setFormData({ name: "", email: "", message: "" });
-  };
 
-  useEffect(() => {
-    if (isSubmitted) {
-      setFadeOut(false);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      const fadeTimer = setTimeout(() => {
+      setShowMessage(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => {
         setFadeOut(true);
       }, 2500);
 
-      const removeTimer = setTimeout(() => {
-        setIsSubmitted(false);
+      setTimeout(() => {
         setShowMessage(false);
-      }, 3000);
-
-      return () => {
-        clearTimeout(fadeTimer);
-        clearTimeout(removeTimer);
-      };
+      }, 2500);
+    } catch (error) {
+      return ` Erro o enviar mensagem ${error}`;
+    } finally {
+      setIsSubmitted(false);
     }
-  }, [isSubmitted]);
+  };
 
   {
     /*JSX*/
@@ -156,7 +153,7 @@ export const Form = () => {
           }`}
         />
 
-        <span className="text-red-500 text-sm mb-2 w-full text-left">
+        <span className="text-red-500 text-sm mb-4 w-full text-left">
           {errors.message}
         </span>
 
