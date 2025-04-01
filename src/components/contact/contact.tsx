@@ -1,5 +1,4 @@
 import { Form } from "./form";
-import { CardLinkedIn } from "./icons";
 export const Contact = () => {
   return (
     <>
@@ -8,8 +7,6 @@ export const Contact = () => {
         id="contact"
       >
         <Form />
-
-        <CardLinkedIn />
       </section>
     </>
   );

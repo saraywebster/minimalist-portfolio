@@ -1,6 +1,6 @@
 export const TextAbout = () => {
   return (
-    <section className="w-full max-w-3xl mx-auto p-8 bg-white rounded-2xl space-y-5 shadow-md">
+    <section className="w-full max-w-3xl mx-auto p-8 bg-white rounded-2xl space-y-5">
       <h2 className="text-3xl font-light text-indigo-500 border-b-2 border-indigo-100 pb-2">
         Sobre Mim
       </h2>

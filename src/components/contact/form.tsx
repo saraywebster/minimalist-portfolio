@@ -110,7 +110,7 @@ export const Form = () => {
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center space-y-5"
       >
-        <div className="w-full mb-2 ">
+        <div className="w-full mb-2 space-y-2 ">
           <label className="text-gray-700 text-lg">Nome</label>
           <input
             type="text"
@@ -124,11 +124,11 @@ export const Form = () => {
                 : "border-gray-300 focus:outline-indigo-500"
             }`}
           />
-          <span className="text-red-500 text-sm w-full text-left">
+          <span className="text-red-500 p-1 text-sm w-full text-left">
             {errors.name}
           </span>
         </div>
-        <div className="w-full mb-2">
+        <div className="w-full mb-2 space-y-2">
           <label className="text-gray-700 text-lg">E-mail</label>
           <input
             type="email"
@@ -163,7 +163,7 @@ export const Form = () => {
             }`}
           />
 
-          <span className="text-red-500 text-sm w-full text-left">
+          <span className="text-red-500 text-sm w-full text-left ">
             {errors.message}
           </span>
         </div>

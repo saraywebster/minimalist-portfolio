@@ -42,7 +42,7 @@ export const Linkedin = () => {
 
 export const CardLinkedIn = () => {
   return (
-    <section className="shadow-sm rounded-xl max-w-3xl py-6 px-6">
+    <section className="flex flex-col items-center space-y-5 bg-indigo-100 max-w-3xl mx-auto p-5 rounded-b-3xl backdrop-blur-2xl opacity-95">
       <div className="flex flex-col items-center space-y-5">
         <Linkedin />
       </div>
