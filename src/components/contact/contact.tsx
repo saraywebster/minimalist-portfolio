@@ -1,11 +1,15 @@
 import { Form } from "./form";
-import { IconsContact } from "./icons";
+import { CardLinkedIn } from "./icons";
 export const Contact = () => {
   return (
     <>
-      <section className="flex flex-col justify-center w-full space-y-5">
+      <section
+        className="flex flex-col justify-center  items-center w-full space-y-5"
+        id="contact"
+      >
         <Form />
-        <IconsContact />
+
+        <CardLinkedIn />
       </section>
     </>
   );

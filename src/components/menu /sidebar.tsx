@@ -11,8 +11,11 @@ export const Sidebar = () => {
         <DesktopNav />
       </span>
 
-      <span className="block lg:hidden p-2 relative bg-gray-50 shadow-md">
-        <section onClick={() => setIsOpen(!isOpen)} className="cursor-pointer ">
+      <span className="block lg:hidden">
+        <section
+          onClick={() => setIsOpen(!isOpen)}
+          className="cursor-pointer bg-indigo-200 p-1 w-1/6 rounded-2xl flex justify-center items-center right-1 top-1 z-50 opacity-80 backdrop-blur-2xl fixed border-2 border-indigo-100 "
+        >
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={isOpen ? "close" : "menu"}
@@ -37,13 +40,13 @@ export const Sidebar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-12 left-0 w-full shadow-lg z-40"
+              className="fixed right-0 "
             >
-              <span className="block md:hidden">
+              <span className="block md:hidden rounded-3xl shadow-md">
                 <MobileNav />
               </span>
 
-              <span className="hidden md:block lg:hidden">
+              <span className="hidden md:block lg:hidden shadow-md rounded-3xl">
                 <TabletNav />
               </span>
             </motion.div>
