@@ -1,4 +1,4 @@
-import { CardLinkedIn } from "../contact/icons";
+import { CardLinkedIn } from "../link/icons";
 import { TextAbout } from "./text_about";
 export const About = () => {
   return (

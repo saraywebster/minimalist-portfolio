@@ -8,7 +8,7 @@ export const TextAbout = () => {
       <p className="text-gray-700 leading-relaxed">
         Olá! Sou{" "}
         <span className="font-semibold text-indigo-500">Sara Ferreira</span>,
-        estudante de{" "}
+        graduanda em{" "}
         <span className="font-semibold">Ciência da Computação</span> na
         <span className="font-semibold"> Faculdade Impacta Tecnologia</span>,
         apaixonada por tecnologia e dedicada a criar soluções que gerem impacto.

@@ -49,3 +49,13 @@ export const CardLinkedIn = () => {
     </section>
   );
 };
+
+export const CardGithub = () => {
+  return (
+    <section className="flex flex-col items-center space-y-5 bg-indigo-100 max-w-3xl mx-auto p-5 rounded-b-3xl backdrop-blur-2xl opacity-95">
+      <div className="flex flex-col items-center space-y-5">
+        <Github />
+      </div>
+    </section>
+  );
+};
