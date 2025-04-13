@@ -46,7 +46,7 @@ export const Nav = () => {
 
 export const MobileNav = () => {
   return (
-    <nav className="w-full p-13 border-gray-50 border-2 flex flex-col relative justify-center items-center bg-gray-50  text-indigo-950">
+    <nav className="w-full p-13 border-gray-50 border-2 flex flex-col relative justify-center items-center rounded-3xl bg-gray-50  text-indigo-950">
       <span className="flex flex-col">
         <Nav />
       </span>
@@ -57,7 +57,7 @@ export const MobileNav = () => {
 export const TabletNav = () => {
   return (
     <nav
-      className="w-full p-20 bg-gray-50 border-gray-50 border-2 relative flex flex-col justify-center items-center text-indigo-950
+      className="w-full rounded-3xl p-20 bg-gray-50 border-gray-50 border-2 relative flex flex-col justify-center items-center text-indigo-950
     "
     >
       <span className="flex flex-col">

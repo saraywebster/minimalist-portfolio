@@ -4,7 +4,7 @@ import { CardGithub } from "../link/icons";
 const EntregaAi = () => {
   return (
     <article className="max-w-3xl mx-auto rounded-3xl p-5 flex flex-col justify-center space-y-2 bg-gray-50 shadow-sm">
-      <h3 className="text-2xl font-light text-gray-700 text-center">
+      <h3 className="text-2xl font-light text-gray-700 text-center  p-2">
         Entrega Aí
       </h3>
       <figure className="flex flex-col items-center justify-center space-y-3">
@@ -34,10 +34,10 @@ const EntregaAi = () => {
 export const Projects = () => {
   return (
     <section
-      className="w-full max-w-3xl mx-auto bg-white rounded-2xl space-y-5"
+      className="w-full max-w-3xl mx-auto  rounded-2xl space-y-5 bg-white "
       id="projects"
     >
-      <div className="p-5 space-y-5">
+      <div className=" space-y-5 p-8">
         <h2 className="text-3xl font-light text-indigo-500 border-b-2 border-indigo-100 pb-2">
           Projetos
         </h2>

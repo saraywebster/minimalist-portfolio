@@ -11,7 +11,7 @@ export const Home = () => {
         <header className="col-span-12 col-start-1">
           <Sidebar />
         </header>
-        <aside className="col-span-10 col-start-2 space-y-10">
+        <aside className="col-span-10 col-start-2 space-y-10 relative z-10">
           <About />
           <Projects />
           <Contact />

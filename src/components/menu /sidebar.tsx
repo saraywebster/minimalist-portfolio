@@ -6,7 +6,7 @@ export const Sidebar = () => {
   const { isOpen, setIsOpen } = useNav();
 
   return (
-    <>
+    <div className="z-50 relative">
       <span className="hidden lg:block bg-gray-50">
         <DesktopNav />
       </span>
@@ -53,6 +53,6 @@ export const Sidebar = () => {
           )}
         </AnimatePresence>
       </span>
-    </>
+    </div>
   );
 };
