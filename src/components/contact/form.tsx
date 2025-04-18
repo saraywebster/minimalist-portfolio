@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { InputComponent } from "./input";
 
 export const Form = () => {
-  {
-    /* STATES */
-  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,11 +27,6 @@ export const Form = () => {
       [name]: value,
     }));
   };
-
-  // const validateField = (fieldName: string) => {
-
-  // };
-
   const validateForm = () => {
     let newErrors = {
       name: "",
@@ -71,21 +63,32 @@ export const Form = () => {
     event.preventDefault();
 
     const { isValid } = validateForm();
-
-    if (!isValid) {
-      return {
-        message: "Erro ao enviar mensagem",
-        errors: errors,
-      };
-    }
+    if (!isValid) return;
 
     setIsSubmitted(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("http://localhost:3000/gmail/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar mensagem");
+      }
+
+      const data = await response.json();
+      console.log("Mensagem enviada com sucesso", data);
 
       setShowMessage(true);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
 
       setTimeout(() => {
         setFadeOut(true);
@@ -93,17 +96,14 @@ export const Form = () => {
 
       setTimeout(() => {
         setShowMessage(false);
-      }, 2500);
+        setFadeOut(false);
+      }, 5000);
     } catch (error) {
       return ` Erro o enviar mensagem ${error}`;
     } finally {
       setIsSubmitted(false);
     }
   };
-
-  {
-    /*JSX*/
-  }
   return (
     <InputComponent
       isSubmitted={isSubmitted}

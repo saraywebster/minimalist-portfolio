@@ -13,7 +13,7 @@ export const Github = () => {
         size={32}
         className="group-hover:scale-110 transition-transform duration-300"
       />
-      <span className="text-xs mt-2 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+      <span className="text-sm font-bold mt-2  opacity-80 group-hover:opacity-100 transition-opacity duration-300">
         GitHub
       </span>
     </a>
@@ -33,7 +33,7 @@ export const Linkedin = () => {
         size={32}
         className="group-hover:scale-110 transition-transform duration-300"
       />
-      <span className="text-xs mt-2 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+      <span className="text-smmt-2 font-bold opacity-80 group-hover:opacity-100 transition-opacity duration-300">
         LinkedIn
       </span>
     </a>
