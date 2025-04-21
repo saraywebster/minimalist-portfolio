@@ -48,5 +48,3 @@ export const Projects = () => {
     </section>
   );
 };
-
-//atenção: corrigir o h2 e padding

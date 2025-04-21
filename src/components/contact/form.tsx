@@ -65,44 +65,32 @@ export const Form = () => {
     const { isValid } = validateForm();
     if (!isValid) return;
 
-    setIsSubmitted(true);
-
     try {
-      const response = await fetch("http://localhost:3000/gmail/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      setIsSubmitted(true);
 
-      if (!response.ok) {
-        throw new Error("Erro ao enviar mensagem");
-      }
-
-      const data = await response.json();
-      console.log("Mensagem enviada com sucesso", data);
-
-      setShowMessage(true);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-
+      //   const response = await fetch("http://localhost:3000/gmail/email", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(formData),
+      //   });
+      //   if (!response.ok) {
+      //     throw new Error("Erro ao enviar mensagem");
+      //   }
+      //   const data = await response.json();
+      //   console.log("Mensagem enviada com sucesso", data);
       setTimeout(() => {
-        setFadeOut(true);
-      }, 2500);
-
-      setTimeout(() => {
-        setShowMessage(false);
+        setShowMessage(true);
         setFadeOut(false);
-      }, 5000);
-    } catch (error) {
-      return ` Erro o enviar mensagem ${error}`;
-    } finally {
-      setIsSubmitted(false);
-    }
+
+        setTimeout(() => {
+          setFadeOut(true);
+          setIsSubmitted(false);
+          setShowMessage(false);
+        }, 2500);
+      }, 1000);
+    } catch (error) {}
   };
   return (
     <InputComponent
